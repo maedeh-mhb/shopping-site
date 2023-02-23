@@ -1,0 +1,82 @@
+.formContainer{
+    width: 40%;
+    background: var(--bgColor);
+    -webkit-backdrop-filter: var(--glass-filter);
+    backdrop-filter: var(--glass-filter);
+    border: var(--glass-border);
+    border-radius: 5px;
+    margin: 50px auto;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    footer {
+        display: flex;
+        width: 30%;
+        margin: 15px auto;
+        justify-content: space-between;
+    }
+}
+
+.formControl {
+    display: flex;
+    justify-content: space-between;
+    input {
+        border-radius: 3px;
+        border: none;
+        background: var(--bgColor);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+        padding: 3px;
+    }
+    
+}
+
+.innerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
+    margin: 10px auto;
+}
+@media screen and (max-width: 768px){
+    .formContainer {
+        min-width:20rem;
+        margin: 10px auto;
+        font-size: 0.7rem;
+        footer {
+            width: 50%
+        }
+    }
+    .innerContainer {
+
+        width: 100%;
+
+    }
+}
+@media screen and ( min-width: 768px) and (max-width: 1280px){
+    .formContainer {
+        min-width:20rem;
+        font-size: 0.8rem;
+        footer {
+            width: 50%
+        }
+    }
+    .innerContainer {
+
+        width: 90%;
+
+    }
+};
+
+.buttonContainer {
+    display: flex;
+    width: 50% !important;
+    justify-content: space-evenly;
+}
+
+.authContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
