@@ -37,7 +37,7 @@ function SignUpPage(props) {
 
 
     function onCancel(e) {
-        e.preventDefault();
+       
         setFormFields(defaultFields)
         setIsSubmit(false);
         setError({});
@@ -46,17 +46,20 @@ function SignUpPage(props) {
 
    async function submitHandler(e) {
         e.preventDefault();
-            try {
-             const {user}= await createAuthWithEmailAndPassword(email,password);
-             const response= await createUserDocFromAuth(user,{name});
-             console.log(response)
-            }
-            catch(error){
-                if(error.code === 'auth/email-already-in-use') {
-                    setShowAlert({show:true,title:'ERROR',content:'Email Is Already In Used'});
-                }
+        console.log(error)
+        if(!error.name && !error.email && !error.password && !error.confirmPassword && isSubmit) {
+             try {
+              const {user}= await createAuthWithEmailAndPassword(email,password);
+              const response= await createUserDocFromAuth(user,{name});
+              onCancel();
+             }
+             catch(error){
+                 if(error.code === 'auth/email-already-in-use') {
+                     setShowAlert({show:true,title:'ERROR',content:'Email Is Already In Used'});
+                 }
+         }
+        
         }
-        onCancel();
     };
     function handleClose() {
         setShowAlert({...showAlert,show:false})
@@ -67,7 +70,7 @@ function SignUpPage(props) {
         <div className={classes.formContainer}>
             <h2>Don't Have An Account?</h2>
             <span>Sign Up Now !</span>
-            <form onSubmit={submitHandler}>
+            <form >
                 <div className={classes.innerContainer}>
                 <div className={classes.formControl}>
                    <label htmlFor='name'>User Name</label>

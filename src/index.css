@@ -9,7 +9,7 @@
 body {
   --main-color : #0a242f;
   --text-color: #F1F1E6;
-
+  height: 100%;
   --size-1: 0.25rem;
   --size-2: 0.5rem;
   --size-3: 0.85rem;
@@ -27,7 +27,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--main-color);
+  /* background-color: var(--main-color); */
+  background: linear-gradient(135deg, rgb(80, 83, 85) 0%, rgb(28, 29, 30) 100%);
+background-repeat: no-repeat;
+background-size: cover;
 
 }
 

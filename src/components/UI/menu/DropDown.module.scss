@@ -1,0 +1,46 @@
+.container {
+    position: absolute;
+    top: 45px;
+    right: 12rem;
+    z-index: 100;
+    opacity: 1;
+    animation: slide 0.5s forwards;
+    width: 300px;
+    background: linear-gradient(135deg, rgb(29, 30, 31) 0%, rgb(28, 29, 30) 100%);
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+   justify-content: space-between
+};
+
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateY(0rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0.5rem);
+  }
+
+}
+
+.innerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+};
+
+.buttonContainer {
+    button {
+        background-color: rgb(114, 115, 117) !important;
+        color: white;
+        &:hover:enabled {
+            background-color: rgb(66, 66, 68) !important;
+        }
+     
+}
+    }

@@ -12,5 +12,10 @@
         border-radius: 3px;
         padding: 10px;
         cursor: pointer;
+        &:disabled {
+            color: rgb(104, 102, 102);
+            cursor: default;
+
+        }
     }
 }

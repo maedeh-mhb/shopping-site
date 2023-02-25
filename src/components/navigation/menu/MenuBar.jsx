@@ -38,14 +38,6 @@ function MenuBar(props) {
                     to={'/'} 
                     className={({isActive}) => (isActive ? classes.activeLink : null)}
                     onClick={onClose}>
-                        Home
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink 
-                    to={'/shop'}
-                    className={({isActive}) => (isActive ? classes.activeLink : null)}
-                    onClick={onClose}>
                         Shop
                     </NavLink>
                 </li>
@@ -55,6 +47,14 @@ function MenuBar(props) {
                     className={({isActive}) => (isActive ? classes.activeLink : null)}
                     onClick={onClose}>
                         Contact
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                    to={'/card'}
+                    className={({isActive}) => (isActive ? classes.activeLink : null)}
+                    onClick={onClose}>
+                        Card
                     </NavLink>
                 </li>
             </ul>

@@ -1,0 +1,62 @@
+[ 
+    {
+      "id": 1,
+      "name": "Crops",
+      "imageUrl": "https://i.ibb.co/gd6Rdqf/10.webp",
+      "price": 25
+    },
+    {
+      "id": 2,
+      "name": "Bottles",
+      "imageUrl": "https://i.ibb.co/FXt8mtn/7.webp",
+      "price": 18
+    },
+    {
+      "id": 3,
+      "name": "T-shirts & Tops",
+      "imageUrl": "https://i.ibb.co/WpqfZ63/9.webp",
+      "price": 35
+    },
+    {
+      "id": 4,
+      "name": "Joggers",
+      "imageUrl": "https://i.ibb.co/DMmwkHS/8.webp",
+      "price": 25
+    },
+    {
+      "id": 5,
+      "name": "Hoodies & Vests",
+      "imageUrl": "https://i.ibb.co/WsvmBn4/5.webp",
+      "price": 18
+    },
+    {
+      "id": 6,
+      "name": "Crop Tops",
+      "imageUrl": "https://i.ibb.co/RHV4XWx/4.webp",
+      "price": 14
+    },
+    {
+      "id": 7,
+      "name": "Stringer",
+      "imageUrl": "https://i.ibb.co/kD7SkJM/3.webp",
+      "price": 18
+    },
+    {
+      "id": 8,
+      "name": "Leggings",
+      "imageUrl": "https://i.ibb.co/SBfY2gp/2.webp",
+      "price": 14
+    },
+    {
+      "id": 9,
+      "name": "HeadWears",
+      "imageUrl": "https://i.ibb.co/DLDtgbt/first.webp",
+      "price": 16
+    },
+    {
+        "id": 10,
+        "name": "Vests",
+        "imageUrl": "https://i.ibb.co/CKd4Mfg/6.webp",
+        "price": 16
+      }
+  ]

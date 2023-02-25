@@ -33,7 +33,7 @@ function SignInForm(props) {
 
    async function signInwithGoogle() {
         const {user} = await signInWithGooglePopup();
-         await createUserDocFromAuth(user);
+        
     };
     function handleClose() {
         setShowAlert({...showAlert,show:false})

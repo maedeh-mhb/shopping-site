@@ -8,7 +8,10 @@ signInWithPopup,
 signInWithRedirect,
 GoogleAuthProvider,
 createUserWithEmailAndPassword,
-signInWithEmailAndPassword} from 'firebase/auth';
+signInWithEmailAndPassword,
+onAuthStateChanged,
+signOut
+} from 'firebase/auth';
 import {getFirestore,
 getDoc,
 setDoc,
@@ -76,4 +79,11 @@ export const createUserDocFromAuth =async (userAuth,additionalInfo={}) =>{
       return;
     }
     return await signInWithEmailAndPassword(auth,email,password)
+  }
+
+  export  function onAuthChange(callback) {
+     onAuthStateChanged(auth,callback);
+  }
+  export async function onSignOut() {
+      signOut(auth)
   }
