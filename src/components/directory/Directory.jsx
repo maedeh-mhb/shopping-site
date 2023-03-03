@@ -9,8 +9,8 @@ import fourth from '../../assets/images/forth.jpg';
 import fifth from '../../assets/images/fifth.jpg';
 
 
-function Directory(props) {
-    const {categoriesMap}= useContext(categoryContext);
+function Directory({categoriesMap}) {
+    
     const [products,setProducts] = useState({});
     const featured = [
             {
@@ -45,7 +45,7 @@ function Directory(props) {
          });
          setProducts({...products})
         }
-    },[]);
+    },[categoriesMap]);
 
     return (
         <DirectoryContainer>

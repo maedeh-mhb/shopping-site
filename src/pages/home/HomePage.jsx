@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Directory from '../../components/directory/Directory';
+import { categoryContext } from '../../contexts/Category.context';
 
 function HomePage(props) {
+  const {categoriesMap}= useContext(categoryContext);
     return (
         <div>
-          <Directory/>
+          <Directory categoriesMap={categoriesMap}/>
         </div>
     );
 }
