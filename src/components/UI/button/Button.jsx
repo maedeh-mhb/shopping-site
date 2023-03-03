@@ -1,11 +1,11 @@
-import classes from './Button.module.scss'
+import {ButtonContainer} from './Button.styles'
 
 function Button(props) {
     const {label,onClick,type,className,disable} = props;
     return (
-        <div className={`${classes.button} ${className}`}>
+        <ButtonContainer>
             <button onClick={onClick} type={type} disabled={disable}>{label}</button>
-        </div>
+        </ButtonContainer>
     );
 }
 

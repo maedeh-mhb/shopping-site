@@ -1,15 +1,12 @@
 import React, { Fragment, useContext } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import shark from '../../assets/icons/shark.svg';
+import { CartContext } from '../../contexts/Cart.context';
 import { userContext } from '../../contexts/user.context';
 import { onSignOut } from '../../utils/firebase/firebase.utils';
-import MenuBar from './menu/MenuBar';
-import classes from './Navigation.module.scss';
-import bag from '../../assets/icons/bag.svg';
 import DropDown from '../UI/menu/DropDown';
-import { CartContext } from '../../contexts/Cart.context';
-import ClickOuter from '../gobals/ClickOuter';
-import CardIcon from '../card/CardIcon';
+import MenuBar from './menu/MenuBar';
+import { Logo, MainNav, MenuIcon, NavBar, NavContainer, StyledActiveLink  } from './Navigation.styles';
 
 function NavigationBar(props) {
   
@@ -20,40 +17,42 @@ function NavigationBar(props) {
     return (
         <Fragment>
             
-            <div className={classes.navContainer}>
-                <div className={classes.logo}>
-                    <NavLink 
-                      className={({isActive}) => (isActive ? classes.activeLink : null)}
-                      to={'/shop'}>
+            <NavContainer>
+                <Logo>
+                    <StyledActiveLink  
+                      to={'/'}
+                      >
                        <img src={shark} />
-                    </NavLink>
-                </div>
-                <div className={classes.mainNav}>
-                    <div className={classes.NavBar}>
-                    <NavLink 
-                    className={({isActive}) => (isActive ? classes.activeLink : null)}
-                    to={'/'} >
+                    </StyledActiveLink >
+                </Logo>
+                <MainNav>
+                    <NavBar>
+                    <StyledActiveLink  
+                    
+                    to={'/shop'} 
+                    >
                        <div>Shop</div>
-                    </NavLink>
-                    <NavLink 
+                    </StyledActiveLink >
+                    <StyledActiveLink  
                     onClick={onSignOut}
-                    className={({isActive}) => (isActive ? classes.activeLink : null)}
+                    
+                    
                     to={'/signIn'}>
                       <div>{currentuser ? 'Sign Out' : 'Sign In'}</div>
-                    </NavLink>
-                    <NavLink 
-                    className={({isActive}) => (isActive ? classes.activeLink : null)}
+                    </StyledActiveLink >
+                    <StyledActiveLink  
+                    
                     to={'/contact'}>
                       <div>Contact</div>
-                    </NavLink>
+                    </StyledActiveLink >
                     <DropDown/>
-                    </div>
-                    <div className={classes.menuIcon}>
+                    </NavBar>
+                    <MenuIcon>
                         <MenuBar />
-                    </div>
+                    </MenuIcon>
 
-                </div>
-            </div>
+                </MainNav>
+            </NavContainer>
             <Outlet/>
         </Fragment>
     );

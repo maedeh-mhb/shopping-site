@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import {BrowserRouter} from 'react-router-dom'; 
-import { Provider } from 'react-redux';                                                
-import { Store } from './store/Store';
-import { UserProvider } from './contexts/user.context';
-import { ProductProvider } from './contexts/Product.context';
 import { CartProvider } from './contexts/Cart.context';
+import { CategoryProvider } from './contexts/Category.context';
+import { UserProvider } from './contexts/user.context';
+import './index.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ProductProvider>
+    <CategoryProvider>
    <UserProvider>
     <CartProvider>
     <BrowserRouter>
@@ -21,6 +19,6 @@ root.render(
     </BrowserRouter>
     </CartProvider>
    </UserProvider>  
-    </ProductProvider>
+    </CategoryProvider>
   </React.StrictMode>
 );

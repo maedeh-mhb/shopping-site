@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from './Modal.module.scss';
+import { BackdropContainer } from './Modal.styles';
 
 const Backdrop = (props) => {
     return (
-        <div className={classes.backdrop} />
+        <BackdropContainer />
     );
 };
 

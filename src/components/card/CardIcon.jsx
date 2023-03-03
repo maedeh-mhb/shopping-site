@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import bag from '../../assets/icons/bag.svg';
 import { CartContext } from '../../contexts/Cart.context';
-import classes from './Card.module.scss';
+import { CartIconContainer } from './Card.styles';
 
 function CardIcon(props) {
     const {setOpen,total,isOpen} = useContext(CartContext);
@@ -11,10 +11,10 @@ function CardIcon(props) {
     };
 
     return (
-        <div className={classes['card-icon-container']}  onClick={openHandler}>
-        <img src={bag} style={{width:'2rem'}}/>
-        <span>{total}</span>
-       </div>
+        <CartIconContainer  onClick={openHandler}>
+            <img src={bag} style={{width:'2rem'}}/>
+            <span>{total}</span>
+        </CartIconContainer>
     );
 }
 

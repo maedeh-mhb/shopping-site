@@ -1,18 +1,18 @@
-import classes from './Card.module.scss';
+import { ItemContainer, ItemCountContainer,ItemImageContainer } from './Card.styles';
 
 function CartItem({product}) {
     const {name,imageUrl,quantity,price} = product;
 
     return (
-        <div className={classes['item-container']}>
-            <span  className={classes['item-image-container']}>
+        <ItemContainer>
+            <ItemImageContainer>
                <img src={imageUrl}/>
-            </span>
-            <span  className={classes['item-count-container']}>
+            </ItemImageContainer>
+            <ItemCountContainer>
                 <span>{name}</span>
                 <span>{quantity} x {price} $</span>
-            </span>
-        </div>
+            </ItemCountContainer>
+        </ItemContainer>
     );
 }
 

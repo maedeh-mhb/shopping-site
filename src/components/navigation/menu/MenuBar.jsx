@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import menuIcon from '../../../assets/icons/menu.svg';
 import ClickOuter from '../../gobals/ClickOuter';
-import classes from './Menu.module.scss';
+import { StyledMenuBar, MenuContainer,StyledMenuNavLink } from './Menu.styles.jsx';
 
 function MenuBar(props) {
     const [openMenu,setOpenMenu] = useState(false);
@@ -23,7 +23,7 @@ function MenuBar(props) {
 
     return (
     <ClickOuter isOpen={openMenu} setIsOpen={setOpenMenu}>
-        <div className={classes.container} >
+        <MenuContainer>
             <img 
                 src={menuIcon} 
                 alt='menu-icon' 
@@ -31,39 +31,47 @@ function MenuBar(props) {
             {
                 openMenu ? (
                     
-                    <div className={`${classes.menuBar} ${openMenu && classes.isOpen }`}>
+                    <StyledMenuBar isOpen={openMenu}>
             <ul>
                 <li>
-                    <NavLink 
+                    <StyledMenuNavLink 
                     to={'/'} 
-                    className={({isActive}) => (isActive ? classes.activeLink : null)}
+                    
+                    onClick={onClose}>
+                        Home
+                    </StyledMenuNavLink>
+                </li>
+                <li>
+                    <StyledMenuNavLink 
+                    to={'/shop'} 
+                    
                     onClick={onClose}>
                         Shop
-                    </NavLink>
+                    </StyledMenuNavLink>
                 </li>
                 <li>
-                    <NavLink 
+                    <StyledMenuNavLink 
                     to={'/contact'}
-                    className={({isActive}) => (isActive ? classes.activeLink : null)}
+                    
                     onClick={onClose}>
                         Contact
-                    </NavLink>
+                    </StyledMenuNavLink>
                 </li>
                 <li>
-                    <NavLink 
-                    to={'/card'}
-                    className={({isActive}) => (isActive ? classes.activeLink : null)}
+                    <StyledMenuNavLink 
+                    to={'/checkout'}
+                    
                     onClick={onClose}>
                         Card
-                    </NavLink>
+                    </StyledMenuNavLink>
                 </li>
             </ul>
 
-            </div>
+            </StyledMenuBar>
                 ) : null
             }
             
-        </div>
+        </MenuContainer>
     </ClickOuter>
     );
 }

@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-
+import { getCategoriesAndDocuments } from "../utils/firebase/firebase.utils";
 export const CartContext= createContext({
     isOpen:false,
     setOpen:()=> {},
@@ -15,6 +15,8 @@ export const CartProvider =({children}) =>{
     const [cardItems,setCardItems] = useState([]);
     const [total,setTotal] = useState(0);
     const [totalPrice,setTotalPrice] = useState(0);
+                                        
+  
 
     useEffect(()=>{
         const newTotal = cardItems.reduce((sum, curr) => {

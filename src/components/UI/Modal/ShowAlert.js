@@ -1,21 +1,21 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import Button from '../button/Button';
 import Modal from './Modal';
-import classes from './Modal.module.scss';
+import { ModalContainer,ErrorTitle} from './Modal.styles';
 
 function ShowAlert(props) {
     const {title,content,onClose} = props;
     let customClass=null;
-    title === 'ERROR' ?  customClass ='error-title' : customClass = 'success-title'
+    title === 'ERROR' ?  customClass ='error' : customClass = 'success'
 
     return (
         <Modal>
             <div>
-                <h1 className={classes[customClass]}>{title}</h1>
-                <div className={classes['modal-container']}>
+                <ErrorTitle status={customClass}>{title}</ErrorTitle>
+                <ModalContainer>
                 <span>{content}</span>
                 <Button label="Close" onClick={onClose}/>
-                </div>
+                </ModalContainer>
             </div>
         </Modal>
     );

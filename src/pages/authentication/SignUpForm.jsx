@@ -1,10 +1,10 @@
-import Input from '../../UI/input/Input';
+import Input from '../../../src/components/UI/input/Input';
 import { useState,useCallback  } from 'react';
-import useFormValidate from '../../../custom/CustomHooks/useFormValidate';
-import Button from '../../UI/button/Button';
-import classes from  './Authentication.module.scss';
-import { createAuthWithEmailAndPassword, createUserDocFromAuth } from '../../../utils/firebase/firebase.utils';
-import ShowAlert from '../../UI/Modal/ShowAlert';
+import useFormValidate from '../../custom/CustomHooks/useFormValidate';
+import Button from '../../../src/components/UI/button/Button';
+import { ButtonContainer, FormContainer, FormControl, InnerContainer } from './Authentication.styles';
+import { createAuthWithEmailAndPassword, createUserDocFromAuth } from '../../utils/firebase/firebase.utils';
+import ShowAlert from '../../../src/components/UI/Modal/ShowAlert';
 
 
 function SignUpPage(props) {
@@ -67,28 +67,28 @@ function SignUpPage(props) {
 
     return (
         <>
-        <div className={classes.formContainer}>
+        <FormContainer>
             <h2>Don't Have An Account?</h2>
             <span>Sign Up Now !</span>
             <form >
-                <div className={classes.innerContainer}>
-                <div className={classes.formControl}>
+                <InnerContainer>
+                <FormControl>
                    <label htmlFor='name'>User Name</label>
                   <Input type="text" name='name' onChange={handleChange} value={name} id="name" error={error['name']}/>
-                </div>
-                <div className={classes.formControl}>
+                </FormControl>
+                <FormControl>
                    <label  htmlFor='email'>Email</label>
                   <Input type="email" name='email' onChange={handleChange} value={email} id="email" error={error['email']}/>
-                </div>
-                <div className={classes.formControl}>
+                </FormControl>
+                <FormControl>
                    <label  htmlFor='password'>Password</label>
                   <Input type="password" name='password' onChange={handleChange} value={password} id="password" error={error['password']}/>
-                </div>
-                <div className={classes.formControl}>
+                </FormControl>
+                <FormControl>
                    <label  htmlFor='confirmPassword'>Confirm Password</label>
                   <Input type="password" name='confirmPassword' onChange={handleChange} value={confirmPassword} id="confirmPassword" error={error['confirmPassword']}/>
-                </div>
-                </div>
+                </FormControl>
+                </InnerContainer>
                 <footer>
                     <Button onClick={onCancel} label="Cancel"/> 
                     <Button onClick={(e)=>{
@@ -97,7 +97,7 @@ function SignUpPage(props) {
                     }} label="Sign Up"/> 
                 </footer>
             </form>
-        </div>
+        </FormContainer>
         {showAlert.show && <ShowAlert title={showAlert.title} content={showAlert.content} onClose={handleClose}/>}
         </>
     );

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-import classes from './Card.module.scss';
-import card from '../../assets/icons/card.svg';
 import { CartContext } from '../../contexts/Cart.context';
+import {CardContainer,Price,PriceContainer,Title,ImageContainer,IconContainer} from './Card.styles';
 
 function Card({product}) {
     const {name,imageUrl,price,id} =product;
@@ -11,25 +10,25 @@ function Card({product}) {
         addItems(product);
         
     }
-   
+  
     return (
-        <div className={classes.container}>
-            <div className={classes.priceContainer}>
-                <span className={classes.price}>
+        <CardContainer>
+            <PriceContainer>
+                <Price>
                 {price} $ 
-               </span>
-                <span className={classes.iconContainer} onClick={()=>onAdd(product)}>
+               </Price>
+                <IconContainer onClick={()=>onAdd(product)}>
                    Add To Card
-                </span>
-            </div>
+                </IconContainer>
+            </PriceContainer>
           
-            <div className={classes.imgContainer}>
+            <ImageContainer>
                <img src={imageUrl} />
-            <span className={classes.title}>
+            <Title>
                {name}
-            </span>
-            </div>
-        </div>
+            </Title>
+            </ImageContainer>
+        </CardContainer>
     );
 }
 

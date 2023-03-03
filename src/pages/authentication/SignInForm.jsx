@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react';
-import useFormValidate from '../../../custom/CustomHooks/useFormValidate';
-import { createUserDocFromAuth, signInAuthWithEmailAndPassword, signInWithGooglePopup } from '../../../utils/firebase/firebase.utils';
-import Button from '../../UI/button/Button';
-import Input from '../../UI/input/Input';
-import ShowAlert from '../../UI/Modal/ShowAlert';
-import classes from './Authentication.module.scss';
+import Button from '../../../src/components/UI/button/Button';
+import Input from '../../../src/components/UI/input/Input';
+import ShowAlert from '../../../src/components/UI/Modal/ShowAlert';
+import useFormValidate from '../../custom/CustomHooks/useFormValidate';
+import { signInAuthWithEmailAndPassword, signInWithGooglePopup } from '../../utils/firebase/firebase.utils';
+import { ButtonContainer, FormContainer, FormControl, InnerContainer } from './Authentication.styles';
 
 function SignInForm(props) {
 
@@ -65,20 +65,20 @@ function SignInForm(props) {
     }
 
     return (
-        <div className={classes.formContainer}>
+        <FormContainer>
         <h2>Already Have An Account?</h2>
         <span>Sign In Now</span>
-    <div className={classes.innerContainer}>
-    <div className={classes.formControl}>
+    <InnerContainer>
+    <FormControl>
                <label  htmlFor='email'>Email</label>
               <Input type="email" name='email' onChange={handleChange} value={email} id="email" error={error['email']}/>
-            </div>
-            <div className={classes.formControl}>
+            </FormControl>
+            <FormControl>
                <label  htmlFor='password'>Password</label>
               <Input type="password" name='password' onChange={handleChange} value={password} id="password" error={error['password']}/>
-            </div>
-    </div>
-    <footer className={classes.buttonContainer}>
+            </FormControl>
+    </InnerContainer>
+    <footer>
             <Button  label="Sign In " onClick={(e)=>{
                 setIsSubmit(true);
                 handleSubmit(e);
@@ -87,7 +87,7 @@ function SignInForm(props) {
 
     </footer>
     {showAlert.show && <ShowAlert title={showAlert.title} content={showAlert.content} onClose={handleClose}/>}
-    </div>
+    </FormContainer>
     );
 }
 

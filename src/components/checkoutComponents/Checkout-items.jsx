@@ -1,7 +1,7 @@
 
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/Cart.context';
-import classes from './CheckoutItem.module.scss';
+import {CheckoutItemContainer} from './CheckoutItem.styles.jsx';
 
 function CheckoutItems(props) {
     
@@ -12,7 +12,7 @@ function removeHandler(id) {
   removeItem(id)
 }
     return (
-        <div className={classes['checkout-container']}>
+        <CheckoutItemContainer>
           <span>
             <img src={imageUrl}/>
           </span>
@@ -28,7 +28,7 @@ function removeHandler(id) {
           <span style={{cursor:'pointer'}} onClick={removeHandler.bind(null,id)}>
             &#10005;
           </span>
-        </div>
+        </CheckoutItemContainer>
     );
 }
 

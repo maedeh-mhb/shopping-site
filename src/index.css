@@ -4,10 +4,10 @@
   --bgColor :rgba(82, 80, 80, 0.3);
   --glass-border :1px solid rgba(82, 80, 80, 0.15);
   --glass-filter:blur(1px);
-  
+  /* color: rgba(71, 91, 100, 0.9); */
 }
 body {
-  --main-color : #0a242f;
+  --main-color : rgb(47, 53, 48);
   --text-color: #F1F1E6;
   height: 100%;
   --size-1: 0.25rem;
@@ -27,8 +27,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: var(--main-color); */
-  background: linear-gradient(135deg, rgb(80, 83, 85) 0%, rgb(28, 29, 30) 100%);
+   background-color: var(--main-color); 
+  
 background-repeat: no-repeat;
 background-size: cover;
 
